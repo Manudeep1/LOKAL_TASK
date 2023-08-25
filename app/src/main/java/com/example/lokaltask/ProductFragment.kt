@@ -49,12 +49,13 @@ class ProductFragment : Fragment() {
             override fun handleOnBackPressed() {
                 val i = Intent( activity ,MainActivity::class.java)
                 activity?.startActivity(i)
+                requireActivity().finish()
             }
         }
         binding.ivBackPressed.setOnClickListener {
             val i = Intent( activity ,MainActivity::class.java)
             activity?.startActivity(i)
-
+            requireActivity().finish()
         }
         requireActivity().onBackPressedDispatcher.addCallback(callback)
         return view
